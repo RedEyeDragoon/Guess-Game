@@ -1,0 +1,20 @@
+
+<header [ngClass]='win'>
+      <h1>Guess My Number!</h1>
+      <p class="between">(Between 1 and 20)</p>
+      <button class="btn again" (click)="onClickA()">Again!</button>
+      <div class="number">{{ display }}</div>
+    </header>
+    <main [ngClass]='win'>
+      <section class="left">
+        <input type="number" class="guess" (input)="onInput($any($event.target).value)" />
+        <button class="btn check" (click)="onClick()">Check!</button>
+      </section>
+      <section class="right">
+        <p class="message">{{ message }}</p>
+        <p class="label-score">💯 Score: <span class="score">{{ score }}</span></p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">{{ highScore }}</span>
+        </p>
+      </section>
+    </main>
